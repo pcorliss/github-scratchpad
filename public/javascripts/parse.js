@@ -6,7 +6,7 @@ $(function() {
   htmlTarget = $('#htmlTarget');
 
   markdownChanged = function() {
-    markdownToConvert = $(this).val();
+    markdownToConvert = $('#markdownSource').val();
     console.log("Change Event", markdownToConvert);
     $.ajax({
       type: "POST",
@@ -25,4 +25,5 @@ $(function() {
   };
 
   $('#markdownSource').bind('keypress', markdownChanged)
+  markdownChanged();
 });
