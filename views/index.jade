@@ -2,4 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  table
+    tr
+      td
+        textarea(id="markdownSource", rows=25, cols=100)= "Github __Flavored__ Markedown"
+      td
+        .content(id="htmlTarget")= "Fooooooo"
+
