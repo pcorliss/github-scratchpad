@@ -1,8 +1,8 @@
 $(function() {
-  htmlTarget = $('#htmlTarget');
+  var htmlTarget = $('#htmlTarget');
 
-  markdownChanged = function() {
-    markdownToConvert = $('#markdownSource').val();
+  var markdownChanged = function() {
+    var markdownToConvert = $('#markdownSource').val();
     $.ajax({
       type: "POST",
       url: "/parse",
@@ -13,11 +13,12 @@ $(function() {
         htmlTarget.html(data.html)
       },
       error: function(data, textStatus){
-        console.log("Error:", data, textStatus);
+        console.error(data, textStatus);
       },
     });
   };
 
-  $('#markdownSource').bind('keypress', markdownChanged)
+  var debouncedMarkdownChanged = _.debounce(markdownChanged, 150);
+  $('#markdownSource').bind('keyup change', debouncedMarkdownChanged)
   markdownChanged();
 });
