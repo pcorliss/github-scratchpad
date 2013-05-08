@@ -1,7 +1,44 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top: 60px;
 }
-a {
-  color: #00b7ff;
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-bottom: 0;
+  top: 0;
+  background: #000;
+}
+.navbar-fixed-top .brand {
+  color: #999;
+  display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+}
+.container-fluid {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.row-fluid {
+  width: 100%;
+  display: table;
+}
+.span6 {
+  margin-left: 0;
+  width: 47%;
+  display: block;
+  float: left;
+}
+textarea#markdownSource {
+  width: 100%;
+  min-height: 1200px;
+  height: 100%;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+article#htmlTarget {
+  width: 100%;
+  padding-left: 25px;
 }

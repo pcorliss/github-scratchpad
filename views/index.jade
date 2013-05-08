@@ -1,10 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  table
-    tr
-      td
-        textarea(id="markdownSource", rows=25, cols=100)= "Github __Flavored__ Markdown"
-      td
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container-fluid
+        a.brand= title
+        .nav-collapse.collapse
+          ul.nav
+
+  .container-fluid
+    .row-fluid
+      .span6
+        textarea(id="markdownSource", cols=100)= "Github __Flavored__ Markdown"
+      .span6
         article.markdown-body.entry-content(id="htmlTarget")= "Loading"
