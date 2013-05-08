@@ -18,7 +18,7 @@ $(function() {
     });
   };
 
-  var debouncedMarkdownChanged = _.debounce(markdownChanged, 150);
+  var debouncedMarkdownChanged = _.debounce(markdownChanged, 300);
   $('#markdownSource').bind('keyup change', debouncedMarkdownChanged)
   markdownChanged();
 });
