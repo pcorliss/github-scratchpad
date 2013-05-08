@@ -18,7 +18,7 @@ marked.setOptions({
   tables: true,
   breaks: false,
   pedantic: false,
-  sanitize: true,
+  sanitize: false,
   smartLists: true,
   langPrefix: 'language-',
   highlight: function(code, lang) {
