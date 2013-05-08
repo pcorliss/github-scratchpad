@@ -7,9 +7,27 @@ var express = require('express')
   , routes = require('./routes')
   , parse = require('./routes/parse')
   , http = require('http')
+  , marked = require('marked')
   , path = require('path');
 
 var app = express();
+
+// Initialize marked
+marked.setOptions({
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  langPrefix: 'language-',
+  highlight: function(code, lang) {
+    if (lang === 'js') {
+      return highlighter.javascript(code);
+    }
+    return code;
+  }
+});
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -29,7 +47,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.post('/parse', parse.parse);
+app.post('/parse', parse.parse(marked));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
