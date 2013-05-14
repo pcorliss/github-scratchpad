@@ -10,7 +10,7 @@ $(function() {
         markdown: markdownToConvert
       },
       success: function(data){
-        htmlTarget.html(data.html)
+        htmlTarget.html(data.html);
       },
       error: function(data, textStatus){
         console.error(data, textStatus);
@@ -19,6 +19,6 @@ $(function() {
   };
 
   var debouncedMarkdownChanged = _.debounce(markdownChanged, 300);
-  $('#markdownSource').bind('keyup change', debouncedMarkdownChanged)
+  $('#markdownSource').bind('keyup change', debouncedMarkdownChanged);
   markdownChanged();
 });
