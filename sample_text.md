@@ -3,6 +3,10 @@ Github Markdown Scratchpad
 
 This is a quick side-by-side markdown editor using Github flavored markdown. It uses [Marked](https://github.com/chjj/marked) for markup generation. There are still a handful of issues between marked and true github flavored markdown but it's a very close approximation.
 
+If you'd like to contribute feel free to submit pull requests and issues via the [github repo](https://github.com/pcorliss/github-scratchpad). 
+
+If you have questions please feel free to send me an email. [pcorliss@gmail.com](mailto:pcorliss@gmail.com)
+
 The CSS is copied from github's site wholesale to give the text the appropriate look and feel.
 
 This page is not affiliated with github in any way shape or form. 
@@ -168,4 +172,3 @@ I get 10 times more traffic from [Google] [1] than from
   [1]: http://google.com/        "Google"
   [2]: http://search.yahoo.com/  "Yahoo Search"
   [3]: http://search.msn.com/    "MSN Search"
-

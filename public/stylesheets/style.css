@@ -42,3 +42,8 @@ article#htmlTarget {
   width: 100%;
   padding-left: 25px;
 }
+.contribute {
+  float: right;
+  padding-top: 15px;
+  font-weight: bold;
+}
