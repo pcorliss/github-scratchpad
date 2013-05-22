@@ -12,6 +12,10 @@ block content
   .container-fluid
     .row-fluid
       .span6
+        button.toggleRenderer Toggle Renderer
+        span.rendererText Loading...
+    .row-fluid
+      .span6
         textarea(id="markdownSource")= sample_text
       .span6
         article.markdown-body.entry-content(id="htmlTarget")= "Loading"
