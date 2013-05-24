@@ -4,6 +4,7 @@ var renderers = {
 };
 
 var currentRenderer = 'local';
+var remainingGithub = '?';
 
 $(function() {
   var htmlTarget = $('#htmlTarget');
@@ -11,6 +12,7 @@ $(function() {
   var markdownChanged = function(event) {
     // Need to exit early if the debounce came in ater the toggle
     if(event != undefined && currentRenderer == 'github') {
+      console.log("Exit Early");
       return true;
     }
     var markdownToConvert = $('#markdownSource').val();
@@ -27,8 +29,13 @@ $(function() {
       type: "POST",
       url: renderers[currentRenderer],
       data: data,
-      success: function(data){
+      success: function(data, textStatus, request){
         htmlTarget.html(data);
+        rateLimit = request.getResponseHeader('X-RateLimit-Remaining');
+        if(rateLimit) {
+          remainingGithub = rateLimit;
+        }
+        renderGithubRateLimit();
       },
       error: function(data, textStatus){
         console.error(data, textStatus);
@@ -37,16 +44,22 @@ $(function() {
   };
 
   var debouncedMarkdownChanged = _.debounce(markdownChanged, 300);
-  //$('#markdownSource').bind('keyup change', debouncedMarkdownChanged);
   markdownChanged();
+
+  var renderGithubRateLimit = function() {
+    console.log("");
+    $('.githubRateLimit').text(remainingGithub + " Github API calls remaining in this hour.");
+  }
 
   var setRenderer = function(name) {
     currentRenderer = name;
     $('.rendererText').text('Rendering using ' + name + ' renderer');
     if(name == 'local'){
+      $('.rendererText').append(', no rate limit');
       $('#markdownSource').bind('keyup change', debouncedMarkdownChanged);
     } else {
       $('#markdownSource').unbind();
+      renderGithubRateLimit();
     }
   };
 
@@ -57,6 +70,9 @@ $(function() {
   };
 
   $('.toggleRenderer').click(toggleRenderer);
+  $('.githubRender').click(function() {
+    markdownChanged();
+  });
 
   setRenderer(currentRenderer);
 });

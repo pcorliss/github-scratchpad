@@ -11,9 +11,13 @@ block content
 
   .container-fluid
     .row-fluid
-      .span6
+      .span12
         button.toggleRenderer Toggle Renderer
         span.rendererText Loading...
+    .row-fluid
+      .span12
+        button.githubRender Render
+        span.githubRateLimit
     .row-fluid
       .span6
         textarea(id="markdownSource")= sample_text
