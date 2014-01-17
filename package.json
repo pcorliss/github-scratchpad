@@ -1,14 +1,14 @@
 {
   "name": "github-scratchpad",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.2.1",
-    "jade": "*",
-    "stylus": "*",
-    "marked": "0.2.8"
+    "express": "3.2.x",
+    "jade": "1.1.x",
+    "stylus": "0.42.x",
+    "marked": "0.2.x"
   }
 }
