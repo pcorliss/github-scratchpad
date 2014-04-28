@@ -2,13 +2,12 @@
 /**
  * Module dependencies.
  */
-
-var express = require('express')
-  ,routes   = require('./routes')
-  ,parse    = require('./routes/parse')
-  ,http     = require('http')
-  ,marked   = require('marked')
-  ,path     = require('path');
+var express = require('express');
+var routes  = require('./routes');
+var parse   = require('./routes/parse');
+var http    = require('http');
+var marked  = require('marked');
+var path    = require('path');
 
 var app = express();
 
