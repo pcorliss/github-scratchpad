@@ -4,11 +4,11 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , parse = require('./routes/parse')
-  , http = require('http')
-  , marked = require('marked')
-  , path = require('path');
+  ,routes   = require('./routes')
+  ,parse    = require('./routes/parse')
+  ,http     = require('http')
+  ,marked   = require('marked')
+  ,path     = require('path');
 
 var app = express();
 
@@ -20,13 +20,7 @@ marked.setOptions({
   pedantic: false,
   sanitize: false,
   smartLists: true,
-  langPrefix: 'language-',
-  highlight: function(code, lang) {
-    if (lang === 'js') {
-      return highlighter.javascript(code);
-    }
-    return code;
-  }
+  langPrefix: 'language-'
 });
 
 // all environments
@@ -41,7 +35,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 

@@ -11,7 +11,7 @@ $(function() {
 
   var markdownChanged = function(event) {
     // Need to exit early if the debounce came in ater the toggle
-    if(event != undefined && currentRenderer == 'github') {
+    if(event !== undefined && currentRenderer === 'github') {
       console.log("Exit Early");
       return true;
     }
@@ -21,7 +21,7 @@ $(function() {
       mode: "gfm"
     };
 
-    if (currentRenderer == 'github') {
+    if (currentRenderer === 'github') {
       data = JSON.stringify(data);
     }
 
@@ -31,7 +31,7 @@ $(function() {
       data: data,
       success: function(data, textStatus, request){
         htmlTarget.html(data);
-        rateLimit = request.getResponseHeader('X-RateLimit-Remaining');
+        var rateLimit = request.getResponseHeader('X-RateLimit-Remaining');
         if(rateLimit) {
           remainingGithub = rateLimit;
         }
@@ -49,12 +49,12 @@ $(function() {
   var renderGithubRateLimit = function() {
     console.log("");
     $('.githubRateLimit').text(remainingGithub + " Github API calls remaining in this hour.");
-  }
+  };
 
   var setRenderer = function(name) {
     currentRenderer = name;
     $('.rendererText').text('Rendering using ' + name + ' renderer');
-    if(name == 'local'){
+    if(name === 'local'){
       $('.rendererText').append(', no rate limit');
       $('#markdownSource').bind('keyup change', debouncedMarkdownChanged);
     } else {
