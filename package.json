@@ -9,6 +9,6 @@
     "express": "3.2.x",
     "jade": "1.1.x",
     "stylus": "0.42.x",
-    "marked": "0.2.x"
+    "marked": "0.3.x"
   }
 }
