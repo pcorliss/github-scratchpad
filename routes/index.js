@@ -7,7 +7,7 @@ exports.index = function(req, res){
       console.error("Could not open file: %s", err);
     }
     res.render('index', {
-      title: 'Github Markdown Scratchpad',
+      title: 'GitHub Markdown Scratchpad',
       sample_text: data
     });
   });

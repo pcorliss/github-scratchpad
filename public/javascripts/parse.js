@@ -4,7 +4,7 @@ var renderers = {
 };
 
 var currentRenderer = 'local';
-var remainingGithub = '?';
+var remainingGitHub = '?';
 
 $(function() {
   var htmlTarget = $('#htmlTarget');
@@ -33,9 +33,9 @@ $(function() {
         htmlTarget.html(data);
         var rateLimit = request.getResponseHeader('X-RateLimit-Remaining');
         if(rateLimit) {
-          remainingGithub = rateLimit;
+          remainingGitHub = rateLimit;
         }
-        renderGithubRateLimit();
+        renderGitHubRateLimit();
       },
       error: function(data, textStatus){
         console.error(data, textStatus);
@@ -46,9 +46,9 @@ $(function() {
   var debouncedMarkdownChanged = _.debounce(markdownChanged, 300);
   markdownChanged();
 
-  var renderGithubRateLimit = function() {
+  var renderGitHubRateLimit = function() {
     console.log("");
-    $('.githubRateLimit').text(remainingGithub + " Github API calls remaining in this hour.");
+    $('.githubRateLimit').text(remainingGitHub + " GitHub API calls remaining in this hour.");
   };
 
   var setRenderer = function(name) {
@@ -59,7 +59,7 @@ $(function() {
       $('#markdownSource').bind('keyup change', debouncedMarkdownChanged);
     } else {
       $('#markdownSource').unbind();
-      renderGithubRateLimit();
+      renderGitHubRateLimit();
     }
   };
 
