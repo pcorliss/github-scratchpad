@@ -1,20 +1,25 @@
-Github Markdown Scratchpad
-==========================
+# GitHub Markdown Scratchpad
 
-This is a quick side-by-side markdown editor using Github flavored markdown. It uses [Marked](https://github.com/chjj/marked) for markup generation. There are still a handful of issues between marked and true github flavored markdown but it's a very close approximation.
+This is a quick side-by-side markdown editor using GitHub flavored markdown. It
+uses [Marked](https://github.com/chjj/marked) for markup generation. There are
+still a handful of issues between Marked and true GitHub flavored markdown but
+it's a very close approximation.
 
-If you'd like to contribute feel free to submit pull requests and issues via the [github repo](https://github.com/pcorliss/github-scratchpad). 
+If you'd like to contribute feel free to submit pull requests and issues via the
+[GitHub repo](https://github.com/pcorliss/github-scratchpad).
 
-If you have questions please feel free to send me an email. [pcorliss@gmail.com](mailto:pcorliss@gmail.com)
+If you have questions please feel free to send me an email.
+[pcorliss@gmail.com](mailto:pcorliss@gmail.com)
 
-The CSS is copied from github's site wholesale to give the text the appropriate look and feel.
+The CSS is copied from GitHub's site wholesale to give the text the appropriate look
+and feel.
 
-This page is not affiliated with github in any way shape or form. 
+This page is not affiliated with GitHub in any way shape or form.
+
+The section below was originally posted at https://github.com/mojombo/github-flavored-markdown/issues/1
 
 GitHub Flavored Markdown
 ================================
-
-Originally from https://github.com/mojombo/github-flavored-markdown/issues/1
 
 *View the [source of this content](http://github.github.com/github-flavored-markdown/sample_content.html).*
 
