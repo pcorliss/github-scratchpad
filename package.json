@@ -6,13 +6,13 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "4.17.x",
-    "body-parser": "*",
-    "morgan": "*",
-    "method-override": "*",
-    "errorhandler": "*",
-    "pug": "*",
-    "stylus": "0.42.x",
-    "marked": "0.3.x"
+    "body-parser": "^1.19.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "marked": "^0.8.2",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.7"
   }
 }
