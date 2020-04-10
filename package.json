@@ -1,13 +1,17 @@
 {
   "name": "github-scratchpad",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.2.x",
-    "pug": "x",
+    "express": "4.17.x",
+    "body-parser": "*",
+    "morgan": "*",
+    "method-override": "*",
+    "errorhandler": "*",
+    "pug": "*",
     "stylus": "0.42.x",
     "marked": "0.3.x"
   }

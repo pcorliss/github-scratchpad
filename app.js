@@ -8,6 +8,9 @@ var parse   = require('./routes/parse');
 var http    = require('http');
 var marked  = require('marked');
 var path    = require('path');
+var logger  = require('morgan');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var app = express();
 
@@ -26,16 +29,15 @@ marked.setOptions({
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(app.router);
-  app.use(require('stylus').middleware(__dirname + '/public'));
+app.use(logger('dev'));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(methodOverride());
+app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
 if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
+  var errorHandler = require('errorhandler');
+  app.use(errorHandler());
 }
 
 app.get('/', routes.index);
