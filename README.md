@@ -11,7 +11,7 @@ http://github-scratchpad.herokuapp.com/
 Installation
 ------------
 ```
-git clone git://github.com/pcorliss/github-scratchpad.git
+git clone git@github.com:pcorliss/github-scratchpad.git
 cd github-scratchpad
 npm install
 node app.js
