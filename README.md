@@ -24,6 +24,7 @@ Deploy
 sudo snap install --classic heroku
 heroku login -i
 heroku git:remote -a github-scratchpad
+git push heroku
 ```
 
 Please Don't Sue Me
