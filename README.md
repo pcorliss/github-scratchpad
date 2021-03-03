@@ -17,6 +17,15 @@ npm install
 node app.js
 ```
 
+Deploy
+------
+
+```
+sudo snap install --classic heroku
+heroku login -i
+heroku git:remote -a github-scratchpad
+```
+
 Please Don't Sue Me
 -------------------
 
