@@ -1,6 +1,6 @@
 {
   "name": "github-scratchpad",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -9,7 +9,7 @@
     "body-parser": "^1.19.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
-    "marked": "^0.8.2",
+    "marked": "^4.0.10",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "pug": "^3.0.2",
