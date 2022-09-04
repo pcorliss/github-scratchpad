@@ -21,7 +21,8 @@ Deploy
 ------
 
 ```
-...
+brew install flyctl
+flyctl deploy
 ```
 
 Please Don't Sue Me
