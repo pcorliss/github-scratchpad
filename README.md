@@ -6,7 +6,7 @@ This is a quick side-by-side markdown editor using Github flavored markdown. It 
 Demo
 ----
 
-http://github-scratchpad.herokuapp.com/
+https://ghscratch.50projects.com/
 
 Installation
 ------------
@@ -21,10 +21,7 @@ Deploy
 ------
 
 ```
-sudo snap install --classic heroku
-heroku login -i
-heroku git:remote -a github-scratchpad
-git push heroku
+...
 ```
 
 Please Don't Sue Me
